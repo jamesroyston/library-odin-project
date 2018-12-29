@@ -1,0 +1,17 @@
+#app {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.bookDiv {
+  margin: 1em;
+  width: 200px;
+  height: auto;
+  border: 1px solid black;
+  padding: 1em;
+}
+
+#addBook{
+  font-size: 32px;
+}
