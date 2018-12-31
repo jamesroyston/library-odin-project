@@ -1,17 +1,28 @@
-#app {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+html, body{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 16px;
 }
 
-.bookDiv {
-  margin: 1em;
-  width: 200px;
-  height: auto;
-  border: 1px solid black;
-  padding: 1em;
+table {
+  border-collapse: collapse;
 }
 
-#addBook{
-  font-size: 32px;
+
+.table-item {
+  width: 24vw;
+  border: 1px solid rgb(148, 148, 148);
+  margin: 0;
+  padding: 0.25em 0.25em;
+
+}
+
+tr:nth-child(odd) {
+  background-color: #d1d1d1;
+}
+
+button {
+  margin: 0;
+  background-color: rgb(211, 67, 67);
+  border-radius: 4px;
+  color: white;
 }

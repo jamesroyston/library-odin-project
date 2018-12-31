@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,27 +8,37 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-    
     <div id="app">
-      <form>
+        <form action="" autocomplete="off">
+            <tr>
+                <td class="table-item">
+                  <label for="title"><strong>New Book:</strong></label>
+                    <input name="title" id="title_field" type="text" placeholder="title..." required>
+                </td>
+                <td class="table-item">
+                    <input name="author" id="author_field" type="text" placeholder="author..." required>
+                </td>
+                <td class="table-item">
+                    <input name="pages" id="pages_field" type="number" placeholder="pages..." required>
+                </td>
+                <td class="table-item">
+                    <input name="read" id="read_field" type=text" placeholder="is it finished?" required>
+                </td>
+              </tr>
+              <br>press enter to add book
+        </form>
+        <br>
+      <table>
+        <tr>
+            <td class="table-item"><strong>Title</strong></td>
+            <td class="table-item"><strong>Author</strong></td>
+            <td class="table-item"><strong>Pages</strong></td>
+            <td class="table-item"><strong>Completed</strong></td>
+          </tr>
+        <tbody id="main-table">
+        </tbody>
 
-        <label for="title">Title: </label>
-        <input name="title" type="text">
-
-        <label for="author">Author: </label>
-        <input name="author" type="text">
-
-        <label for="pages">Pages: </label>
-        <input name="pages" type="text">
-
-        <label for="read">Complete: </label>
-        <input name="read" type="checkbox">
-        
-        <button id="addBook">Add Book</button>
-      </form>
+      </table>
     </div>
     <script src="app.js" async defer></script>
   </body>
