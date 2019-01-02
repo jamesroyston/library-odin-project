@@ -1,45 +1,51 @@
 <!DOCTYPE html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Library</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <div id="app">
-        <form action="" autocomplete="off">
-            <tr>
-                <td class="table-item">
-                  <label for="title"><strong>New Book:</strong></label>
-                    <input name="title" id="title_field" type="text" placeholder="title..." required>
-                </td>
-                <td class="table-item">
-                    <input name="author" id="author_field" type="text" placeholder="author..." required>
-                </td>
-                <td class="table-item">
-                    <input name="pages" id="pages_field" type="number" placeholder="pages..." required>
-                </td>
-                <td class="table-item">
-                    <input name="read" id="read_field" type=text" placeholder="is it finished?" required>
-                </td>
-              </tr>
-              <br>press enter to add book
-        </form>
-        <br>
-      <table>
-        <tr>
-            <td class="table-item"><strong>Title</strong></td>
-            <td class="table-item"><strong>Author</strong></td>
-            <td class="table-item"><strong>Pages</strong></td>
-            <td class="table-item"><strong>Completed</strong></td>
-          </tr>
-        <tbody id="main-table">
-        </tbody>
 
-      </table>
-    </div>
-    <script src="app.js" async defer></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Library</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div id="app">
+    <button id="new_book_button">Add Book</button>
+    <form id="book_form" action="" autocomplete="off">
+      <label for="name"><strong>New Book:</strong></label>
+      <input name="name" id="title_field" type="text" placeholder="name..." required>
+      
+      <input name="author" id="author_field" type="text" placeholder="author..." required>
+      
+      <input name="pages" id="pages_field" type="number" placeholder="pages..." required>
+      <br>
+      <radio-group>
+        <input value='true' name="status" id="readt" type="radio" required>
+        <label for="readt">Read</label>
+      </radio-group>
+
+      <radio-group>
+        <input value='false' name="status" id="readf" type="radio" required>
+        <label for="readf">Not Read</label>
+      </radio-group>
+      <br>
+      <button type="submit">submit</button>
+    </form>
+    <br>
+    <table>
+      <tr id='index-row'>
+        <td class="table-item"><strong>Title</strong></td>
+        <td class="table-item"><strong>Author</strong></td>
+        <td class="table-item"><strong>Pages</strong></td>
+        <td class="table-item"><strong>Completed</strong></td>
+      </tr>
+      <tbody id="main-table">
+      </tbody>
+
+    </table>
+  </div>
+  <script src="./script.js" async defer></script>
+</body>
+
 </html>
