@@ -5,26 +5,38 @@ body {
   background-color: #272727;
   color: #db0000;
   font-weight: 500;
-  margin: 2em;
+  width: 100%;
+  box-sizing: border-box;
+
 }
 
 form {
   display: none;
 }
 
+#app {
+  margin: 1em;
+}
 
 table {
   border-collapse: collapse;
+  max-width: 90%;
+}
+
+@media (min-width: 600px) {
+  table {
+    width: 100vw;
+  }
 }
 
 
 
 .table-item {
-  width: 24vw;
+  box-sizing: border-box;
+  max-width: 20%;
   border: 1px solid rgb(146, 146, 146);
   margin: 0;
-  padding: 0.25em 0.25em;
-
+  padding: 0.25em 1em;
 }
 
 #index-row {

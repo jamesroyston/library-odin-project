@@ -45,7 +45,6 @@ function createBookRow(book, index) {
   const bookRow = document.createElement('tr')
   // sets dataset attribute for tr to the index of book in myLib array
   bookRow.dataset.index = index
-  bookRow.className = 'table-item'
 
   const name = document.createElement('td')
   const deleteBtn = document.createElement('button')
@@ -74,14 +73,16 @@ function createBookRow(book, index) {
     book.isRead()
   }.bind(book)
 
+
   const bookRowItems = [name, author, pages, status]
 
-  table.appendChild(bookRow)
   bookRowItems.forEach(item => {
-    name.appendChild(deleteBtn)
-    status.appendChild(toggle)
+    item.className = 'table-item'
     bookRow.appendChild(item)
   })
+  table.appendChild(bookRow)
+  name.appendChild(deleteBtn)
+  status.appendChild(toggle)
 }
 
 
