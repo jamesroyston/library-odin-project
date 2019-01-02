@@ -24,10 +24,10 @@ function addBookToLib(book) {
   renderLibrary()
 }
 
-// I'm confused about how this works
+
 function deleteBook(index) {
-  console.log({index})
-  myLibrary.splice(index, 1)
+  alert('deleted book: ' + myLibrary[index].name)
+  console.log(myLibrary.splice(index, 1))
   renderLibrary()
   console.log(myLibrary)
 }
@@ -51,8 +51,9 @@ function createBookRow(book, index) {
   const deleteBtn = document.createElement('button')
   deleteBtn.style.fontSize = '12px'
   deleteBtn.innerHTML = 'X'
-  // sets deleteBtn click to deleteBook function
-  deleteBtn.addEventListener('click', deleteBook)
+  deleteBtn.addEventListener('click', function() {
+    deleteBook(index)
+  })
   name.innerHTML = '' + book.name
 
   const author = document.createElement('td')
@@ -68,14 +69,12 @@ function createBookRow(book, index) {
 
   const toggle = document.createElement('button')
   toggle.style.fontSize = '12px'
-  toggle.innerHTML = '%'
+  toggle.innerHTML = 'change'
   toggle.onclick = function () {
     book.isRead()
   }.bind(book)
 
   const bookRowItems = [name, author, pages, status]
-
-  // const toggle = document.createElement('button').innerHTML = 'toggle';
 
   table.appendChild(bookRow)
   bookRowItems.forEach(item => {
@@ -118,10 +117,10 @@ newBookButton.addEventListener('click', function () {
   }
 })
 
-addBookToLib(new Book("YDKJS: Up and Going", "Kyle Simpson", 456, false))
-addBookToLib(new Book("YDKJS: Scopes and Closures", "Kyle Simpson", 411, true))
-addBookToLib(new Book("YDKJS: Scopes and Closures", "Kyle Simpson", 411, true))
-addBookToLib(new Book("YDKJS: Scopes and Closures", "Kyle Simpson", 411, true))
-addBookToLib(new Book("YDKJS: Scopes and Closures", "Kyle Simpson", 411, true))
-addBookToLib(new Book("YDKJS: Scopes and Closures", "Kyle Simpson", 411, true))
+addBookToLib(new Book("Up and Going", "Kyle Simpson", 456, false))
+addBookToLib(new Book("Scopes and Closures", "Kyle Simpson", 411, true))
+addBookToLib(new Book("this & Object Prototypes", "Kyle Simpson", 411, true))
+addBookToLib(new Book("Types & Grammar", "Kyle Simpson", 411, true))
+addBookToLib(new Book("Async & Performance", "Kyle Simpson", 411, true))
+addBookToLib(new Book("ES6 & Beyond", "Kyle Simpson", 411, true))
 renderLibrary()
