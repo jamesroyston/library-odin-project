@@ -12,10 +12,15 @@ body {
 
 form {
   display: none;
+  text-align: center;
 }
 
 #app {
-  margin: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
 }
 
 table {
@@ -23,20 +28,14 @@ table {
   max-width: 90%;
 }
 
-@media (min-width: 600px) {
-  table {
-    width: 100vw;
-  }
-}
-
 
 
 .table-item {
   box-sizing: border-box;
-  max-width: 20%;
   border: 1px solid rgb(146, 146, 146);
   margin: 0;
   padding: 0.25em 1em;
+  width: 15%;
 }
 
 #index-row {
@@ -49,7 +48,6 @@ tr:nth-child(odd) {
 }
 
 button {
-  margin: 0.5em;
   padding: 0.5em 1em;
   background-color: rgba(71, 0, 129, 0.521);
   border-radius: 4px;
