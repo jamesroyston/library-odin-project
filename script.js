@@ -2,21 +2,20 @@ const table = document.querySelector("#main-table");
 let myLibrary = [];
 const newBookButton = document.querySelector('#new_book_button')
 
+class Book {
+  constructor (name, author, pages, status) {
+    this.name = name;
+    this.author = author;
+    this.pages = pages;
+    this.status = status;
+  }
 
-function Book(name, author, pages, status) {
-  this.name = name;
-  this.author = author;
-  this.pages = pages;
-  this.status = status;
+  isRead() {
+    this.status = !this.status
+    console.table(myLibrary)
+    renderLibrary()
+  }
 }
-
-
-Book.prototype.isRead = function () {
-  this.status = !this.status
-  console.table(myLibrary)
-  renderLibrary()
-};
-
 
 function addBookToLib(book) {
   myLibrary.push(book)
@@ -60,15 +59,15 @@ function createBookRow(book, index) {
 
   const pages = document.createElement('td')
   pages.innerHTML = book.pages
-  pages.style.color = '#986aee'
+
 
   const status = document.createElement('td')
   status.innerHTML = book.status
-  status.style.color = '#986aee'
+
 
   const toggle = document.createElement('button')
   toggle.style.fontSize = '12px'
-  toggle.innerHTML = 'change'
+  toggle.innerHTML = '<>'
   toggle.onclick = function () {
     book.isRead()
   }.bind(book)
